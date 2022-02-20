@@ -1,0 +1,33 @@
+{% extends 'Base.html' %}
+{% load static %}
+
+{% block main%}
+<section class="vh-50 gradient-custom">
+    <div class="container py-5 h-50">
+        <div class="row d-flex justify-content-center align-items-center h-50">
+            <div class="col-8 col-md-8 col-lg-6 col-xl-5">
+                <div class="card bg-dark text-white" style="border-radius: 1rem;">
+                    <div class="card-body p-5 text-center">
+
+                        <div class="mb-md-4 mt-md-4 pb-5">
+                            <form action="register" method="post">
+                                {% csrf_token %}
+                                {% for field in form %}
+                                <p>{{field.label}}{{field}}</p>
+                                {% endfor %}
+
+                                <input type="submit" name='click me' text='Create'>
+                            </form>
+                        </div>
+                        <div>
+                            <p class="mb-0"><a href="login" class="text-white-50 fw-bold">Sign
+                                    in</a></p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
