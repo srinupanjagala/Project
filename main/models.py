@@ -1,3 +1,4 @@
+from unittest.util import _MAX_LENGTH
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -10,6 +11,7 @@ class Products(models.Model):
     image = models.ImageField(upload_to='img')
     description = models.CharField(max_length=200, null=True)
     disc_price = models.IntegerField(null=True)
+    catagory = models.CharField(_MAX_LENGTH=20)
 
 
 class Orders(models.Model):
